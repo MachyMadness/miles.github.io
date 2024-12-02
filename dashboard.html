@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: darkred;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h3 {
+            padding: none;
+            margin: none;
+        }
+        h6 {
+            padding: none;
+            margin: none;
+        }
+        a {
+            background-color: gray;
+            height: 50px;
+            width: 100px;
+            border-radius: 3px;
+            font: white;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            color: red;
+            padding: 10px 20px;
+            font-family: Old English;
+        }
+        .navbar .logo img {
+            height: 50px;
+            width: auto;
+        }
+        .navbar .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .navbar .links {
+            display: flex;
+            gap: 10px;
+        }
+        .navbar .links button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar .links button:hover {
+            background-color: #555;
+        }
+
+        /* Search Button */
+        .navbar .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .search-container input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .navbar .search-container button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .navbar .search-container button:hover {
+            background-color: #555;
+        }
+
+        .slider {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+
+
+
+        .content-box img {
+
+        	height: 100px;
+        	width: 75px;
+        }
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .controls button {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .content-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .content-box {
+            flex: 1;
+            max-width: 30%;
+            min-width: 200px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            text-align: justify;
+        }
+        .main-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+            flex-wrap: wrap;
+        }
+        .youtube, .map {
+            flex: 1;
+            max-width: 45%;
+            text-align: center;
+        }
+
+        .content-box2 {
+
+        	width: auto;
+        	background-color: lightpink;
+        	border-radius: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .social-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        .social-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            background-color: #333;
+            transition: background-color 0.3s;
+        }
+        .social-btn.fb { background-color: #3b5998; } /* Facebook Blue */
+        .social-btn.tw { background-color: #1da1f2; } /* Twitter Blue */
+        .social-btn.ig { background-color: #e1306c; } /* Instagram Pink */
+        .social-btn:hover {
+            background-color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .content-box {
+                max-width: 100%;
+            }
+            .youtube, .map {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="file:///C:/Users/User/Desktop/IT%20PROJ%20DEFENSE/defense%20homepage.html"><img src="logo.png" alt="Logo"></a>
+            </div>
+            
+            <!-- Title -->
+            <div class="title">CAPITOL UNIVERSITY</div>
+            
+            <!-- Links -->
+            <div class="links">
+                <button onclick="window.location.href='#'">Home</button>
+                <button onclick="window.location.href='#'">About</button>
+                <button onclick="window.location.href='#contact'">Contact</button>
+            </div>
+
+            <!-- Search Container -->
+            <div class="search-container">
+                <input type="text" placeholder="Search..." id="search" style="padding: 5px;">
+                <button onclick="alert('Search feature coming soon!')">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <div class="content-section">
+        <div class="content-box">
+            <h3>CANDIDATE NUMBER 1</h3>
+
+            <br>
+            <img src="jm.jpg">
+            <h6>Name: John Malarkey</h6>
+            <a href="file:///C:/Users/User/Desktop/IT%20PROJ%20DEFENSE/jm.html.html"><button>vote</button></a>
+        </div>
+        <div class="content-box">
+            <h3>CANDIDATE NUMBER 2</h3>
+            <br>
+            <img src="jb.jpg">
+            <h6>Name: Johnny Bravo</h6>
+           <a href="file:///C:/Users/User/Desktop/IT%20PROJ%20DEFENSE/jb.html"><button>vote</button></a>
+        </div>
+        <div class="content-box">
+            <h3>CANDIDATE NUMBER 3</h3>
+            <img src="jlc.jpg">
+            <br>
+            <h6>Name: John Lloyd Cruz</h6>
+            <a href="file:///C:/Users/User/Desktop/IT%20PROJ%20DEFENSE/jlc.html"><button>vote</button></a>
+        </div>
+    </div>
+
+    <!-- Slider -->
+    <div class="slider">
+        <div class="slides">
+            <img src="welcome assembly.jpg" alt="Slide 1">
+            <img src="oplan liniss.png" alt="Slide 2">
+            <img src="owshie.jpg" alt="Slide 3">
+        </div>
+        <div class="content-box2">
+            <h3>Reminder:</h3>
+            <p>Before you vote, remember to vote wisely! As you can see in the images above, those are successful events because of the great leaders that helped prepare for such important events.</p>
+        </div>
+        <div class="controls">
+            <button id="prev">❮</button>
+            <button id="next">❯</button>
+        </div>
+    </div>
+
+    <!-- YouTube and Maps -->
+    <div class="main-section">
+        <div class="youtube">
+            <h2>Where I got my idea</h2>
+            <iframe
+                src="https://www.youtube.com/embed/XpKZVuayW5o"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="map">
+            <h2>Locate Capitol University Here</h2>
+            <iframe
+                src="https://maps.app.goo.gl/5dasYkS2WGiRL3hYA"
+                width="600"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 cu. All Rights Reserved. Copyright Notice.</p>
+        <div class="social-buttons">
+            <center>
+                <div id="contact"><p>Contact us here</p>
+                    <a href="https://www.facebook.com/Capitol.University" class="social-btn fb" target="_blank" aria-label="Facebook">F</a>
+                    <a href="https://twitter.com" class="social-btn tw" target="_blank" aria-label="Twitter">T</a>
+                    <a href="https://instagram.com" class="social-btn ig" target="_blank" aria-label="Instagram">I</a>
+                </div>
+            </center>
+        </div>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slides img').length;
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.container {
+
+   border-radius: 25px;
+   background: antiquewhite;
+   padding: 20px;
+   width: 350px;
+   height: 200px;
+   border-style: solid;
+   border-color: darkred;
+}
+
+.center {
+  margin-right: 50%;
+  margin-left: 34%; 
+  margin-top: 13%; 
+  padding: 10px;
+  border-block: 3px;
+  border-color: red;
+}
+
+
+
+h1 {
+
+	padding: 0;
+	border:0;
+	margin: 0;
+	font-weight: strong;
+}
+
+P {
+
+	font-size: 7px;
+	font-weight: strong;
+	font:arial ;
+	margin-bottom: 10px;
+}
+
+
+h6 {
+
+	padding: 0;
+	border:0;
+	margin: 0;
+	font-weight: strong;
+}
